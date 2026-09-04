@@ -38,11 +38,20 @@ function criarCard(pokemon) {
     // A imagem oficial fica dentro de sprites.front_default
     const imagem = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
     
-    card.innerHTML = `
+   card.innerHTML = `
         <img src="${imagem}" alt="${pokemon.name}">
         <h3>#${pokemon.id} - ${pokemon.name}</h3>
         <p>Tipo: ${pokemon.types.map(tipo => tipo.type.name).join(', ')}</p>
     `;
-
     container.appendChild(card);
 }
+btnProximo.addEventListener('click', () => {
+    if (urlProximo) buscarPokemons(urlProximo);
+});
+
+btnVoltar.addEventListener('click', () => {
+    if (urlAnterior) buscarPokemons(urlAnterior);
+});
+
+// Inicia a Pokédex ao carregar o script
+buscarPokemons(urlAtual);
