@@ -30,3 +30,25 @@ body {
     width: 120px;
     height: 120px;
 }
+@media (max-width: 600px) {
+    .grid {
+        /* Diminui o tamanho mínimo do card de 200px para 140px no celular */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 10px; /* Reduz o espaço interno no celular */
+    }
+
+    .card img {
+        width: 90px; /* Diminui a imagem do Pokémon no celular */
+        height: 90px;
+    }
+
+    .paginacao button {
+        padding: 15px 20px; /* Deixa o botão maior e mais fácil de tocar com o dedo */
+        font-size: 16px;
+    }
+}
