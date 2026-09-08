@@ -3,3 +3,53 @@
     padding: 0px;
     box-sizing: 0px;
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex; /* Flexbox para centralizar tudo na tela */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    margin: 0;
+}
+
+.card-detalhe {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-transform: capitalize;
+}
+
+.card-detalhe img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.atributos {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#btn-voltar {
+    background: #ffcb05;
+    color: #333;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#btn-voltar:hover {
+    background: #e6b700;
+}

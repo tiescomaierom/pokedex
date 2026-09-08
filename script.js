@@ -48,21 +48,21 @@ async function buscarPokemons(url) {
 function criarCard(pokemon) {
     const card = document.createElement('div');
     card.className = 'card';
+    card.style.cursor = 'pointer';
 
-    // Pega a imagem oficial (alta qualidade) ou a padrão caso não exista
     const imagem = pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default;
     
-    // Formata os tipos para ficarem separados por vírgula
-    const tipos = pokemon.types.map(tipo => tipo.type.name).join(', ');
-
-    // Injeta os dados no HTML do card
     card.innerHTML = `
         <img src="${imagem}" alt="${pokemon.name}">
         <h3>#${pokemon.id} - ${pokemon.name}</h3>
-        <p>Tipo: ${tipos}</p>
     `;
 
-    // Cola o card pronto dentro do container principal na tela
+    // NOVA LÓGICA DE CLIQUE AQUI:
+    card.addEventListener('click', () => {
+        // Redireciona para a pasta pokemon passando o nome na URL
+        window.location.href = `pokemon/index.html?nome=${pokemon.name}`;
+    });
+
     container.appendChild(card);
 }
 
